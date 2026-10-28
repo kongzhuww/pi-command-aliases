@@ -4,7 +4,7 @@ description: Manage and configure Pi slash-command aliases, argument forwarding,
 license: MIT
 compatibility: Pi 1.0.2+ with pi-command-aliases installed
 metadata:
-  version: "0.4.2"
+  version: "0.4.3"
 ---
 
 # Command Aliases Management Skill
