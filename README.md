@@ -2,6 +2,8 @@
 
 > Visual command alias manager and slash-command forwarding suite for [Pi](https://github.com/earendil-works/pi).
 
+**English** | [简体中文](README_zh.md)
+
 <p align="left">
   <a href="https://www.npmjs.com/package/pi-command-aliases"><img src="https://img.shields.io/npm/v/pi-command-aliases.svg?color=cb3837&logo=npm" alt="npm version"></a>
   <a href="https://www.npmjs.com/package/pi-command-aliases"><img src="https://img.shields.io/npm/dm/pi-command-aliases.svg?color=blue&logo=npm" alt="npm downloads"></a>

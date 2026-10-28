@@ -26,6 +26,8 @@
     "storage.ts",
     "skills",
     "README.md",
+    "README_zh.md",
+    "README.zh-CN.md",
     "LICENSE"
   ],
   "peerDependencies": {
