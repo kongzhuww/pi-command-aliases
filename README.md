@@ -5,6 +5,7 @@
 **English** | [简体中文](README_zh.md)
 
 <p align="left">
+  <a href="https://github.com/kongzhuww/pi-command-aliases/actions/workflows/ci.yml"><img src="https://github.com/kongzhuww/pi-command-aliases/actions/workflows/ci.yml/badge.svg" alt="CI Status"></a>
   <a href="https://www.npmjs.com/package/pi-command-aliases"><img src="https://img.shields.io/npm/v/pi-command-aliases.svg?color=cb3837&logo=npm" alt="npm version"></a>
   <a href="https://www.npmjs.com/package/pi-command-aliases"><img src="https://img.shields.io/npm/dm/pi-command-aliases.svg?color=blue&logo=npm" alt="npm downloads"></a>
   <a href="https://github.com/kongzhuww/pi-command-aliases/stargazers"><img src="https://img.shields.io/github/stars/kongzhuww/pi-command-aliases?color=yellow&logo=github" alt="GitHub stars"></a>
