@@ -12,6 +12,7 @@
   "keywords": [
     "pi-package",
     "pi-extension",
+    "pi-skill",
     "command-alias",
     "slash-commands",
     "tui",
@@ -23,6 +24,7 @@
     "manager.ts",
     "picker.ts",
     "storage.ts",
+    "skills",
     "README.md",
     "LICENSE"
   ],
@@ -33,6 +35,9 @@
   "pi": {
     "extensions": [
       "./index.ts"
+    ],
+    "skills": [
+      "./skills/*"
     ]
   }
 }
