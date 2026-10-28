@@ -2,10 +2,31 @@
 
 > Visual command alias manager and slash-command forwarding suite for [Pi](https://github.com/earendil-works/pi).
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Pi Extension](https://img.shields.io/badge/Pi-Extension-emerald)](https://pi.dev/packages)
+<p align="left">
+  <a href="https://www.npmjs.com/package/pi-command-aliases"><img src="https://img.shields.io/npm/v/pi-command-aliases.svg?color=cb3837&logo=npm" alt="npm version"></a>
+  <a href="https://www.npmjs.com/package/pi-command-aliases"><img src="https://img.shields.io/npm/dm/pi-command-aliases.svg?color=blue&logo=npm" alt="npm downloads"></a>
+  <a href="https://github.com/kongzhuww/pi-command-aliases/stargazers"><img src="https://img.shields.io/github/stars/kongzhuww/pi-command-aliases?color=yellow&logo=github" alt="GitHub stars"></a>
+  <a href="https://pi.dev/packages"><img src="https://img.shields.io/badge/Pi-Official%20Catalog-emerald?logo=target" alt="Pi Package Catalog"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-purple.svg" alt="License: MIT"></a>
+</p>
 
 Turn long, complex slash commands into short, intuitive shortcuts with full argument forwarding, autocomplete hints, and a built-in split-pane interactive TUI manager.
+
+---
+
+## 🚀 Official Distribution
+
+`pi-command-aliases` is published on **npm** and automatically indexed by the official **[Pi Package Catalog (pi.dev/packages)](https://pi.dev/packages)**.
+
+### Install in one command:
+
+```bash
+pi install npm:pi-command-aliases
+```
+
+*(Or via GitHub directly: `pi install github:kongzhuww/pi-command-aliases`)*
+
+Run `/reload` inside Pi after installation.
 
 ---
 
@@ -20,6 +41,8 @@ Turn long, complex slash commands into short, intuitive shortcuts with full argu
 - 🔍 **Dynamic Autocomplete Integration**:
   - Type `/swit` and get immediate completion for `/switch daily`, `/switch platform`, etc.
   - Supports static candidate lists or dynamic JSON-backed key sources.
+- 🤖 **Built-in Agent Skill (Zero-Configuration for Users)**:
+  - Ships with an embedded `command-aliases` skill. Users don't even need to open the TUI—they can simply tell their AI: *"Map `/ext` to `/extension-toggle`"*, and the AI will configure and validate it automatically!
 - 🔒 **Zero Token Overhead & Zero-Execution Preview**:
   - Pure local extension dispatch — does **not** register unnecessary AI tools or consume model context.
   - Previews only render mappings and never trigger remote execution or account changes.
@@ -27,25 +50,11 @@ Turn long, complex slash commands into short, intuitive shortcuts with full argu
 
 ---
 
-## 📦 Installation
+## 🎮 How It Works
 
-Requires Pi 1.0.2 or newer.
+### 1. Interactive Visual Manager (`/aliases`)
 
-```bash
-pi install github:kongzhuww/pi-command-aliases
-```
-
-Or clone locally and link into your `~/.pi/agent/extensions/` directory.
-
-Run `/reload` inside Pi after installation.
-
----
-
-## 🚀 Quick Start
-
-### 1. Visual Manager (Recommended)
-
-Type `/aliases` in interactive mode to open the management panel:
+Type `/aliases` in interactive TUI mode:
 
 ```text
 命令别名管理
@@ -64,9 +73,22 @@ Type `/aliases` in interactive mode to open the management panel:
 Ctrl+S 保存 | Esc 关闭 | 保存后 /reload 生效
 ```
 
-### 2. Manual Configuration
+### 2. Full Autocomplete Typing Experience
 
-You can also directly edit `~/.pi/agent/command-aliases.json`:
+Start typing in the prompt bar:
+- Type `/swit` ➡️ auto-suggests `/switch daily`, `/switch platform`, etc.
+- Type `/gem` ➡️ auto-suggests `/gemini account 1`, `/gemini account 2`, etc.
+
+### 3. Let AI Configure It For You
+
+Just talk to your Pi Agent:
+> *"Map `/switch <group>` to `/extension-toggle use <group>`, and load candidate names from `extension-toggle-collections.json`"*
+
+The included Agent Skill handles reading, schema verification, atomic write, and reloads automatically.
+
+---
+
+## 🛠️ Configuration Spec (`~/.pi/agent/command-aliases.json`)
 
 ```json
 {
@@ -85,12 +107,6 @@ You can also directly edit `~/.pi/agent/command-aliases.json`:
 }
 ```
 
-Run `/reload` inside Pi to apply changes.
-
----
-
-## 🛠️ Configuration Spec
-
 | Field | Type | Description |
 |---|---|---|
 | `version` | `number` | Schema version (must be `1`). |
@@ -100,15 +116,13 @@ Run `/reload` inside Pi to apply changes.
 
 ---
 
-## 🧪 Testing
+## 🧪 Robust Testing
 
-The repository comes with a comprehensive offline test suite covering:
+Tested against real Pi runtime environments and edge-cases:
 - Unit resolution, cycle detection, quote handling, and argument consumption (`test.cjs`).
 - Real Pi Autocomplete provider integration and prefix matching (`completion-test.mjs`).
 - Split-pane TUI rendering, viewport bounds, and atomic storage lock tests (`manager-test.mjs`).
 - Real Pi extension runner command context dispatch (`integration-test.mjs`).
-
-To run tests locally:
 
 ```bash
 node test.cjs
